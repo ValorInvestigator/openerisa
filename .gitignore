@@ -1,0 +1,25 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.token
+**/keys/*
+
+# Data artifacts (large; rebuilt from Postgres + DOL CSVs via pipeline/build_sqlite.py)
+data/*.sqlite
+data/*.sqlite-*
+data/*.db
+*.dump
+pipeline/data_raw/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+.vercel/
+
+# OS / editor
+.DS_Store
+*.log
+__pycache__/
