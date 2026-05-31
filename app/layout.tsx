@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 const SITE = "OpenERISA";
 const DESC =
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <p>
               <strong className="text-ink">OpenERISA</strong> is a free, public lookup of
               employee benefit plan filings (Form 5500 / 5500-SF). Source data: U.S. Department of
-              Labor, Employee Benefits Security Administration (EBSA), filing years 2024–2025. Data
+              Labor, Employee Benefits Security Administration (EBSA), filing years 2020–2025. Data
               is shown as filed and is not validated or endorsed by OpenERISA. For official records
               see the DOL{" "}
               <a
@@ -58,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               .
             </p>
             <p className="mt-3">
-              A public-interest project by{" "}
+              Built by{" "}
               <a
                 className="font-medium text-brand underline"
                 href="https://www.valor-investigations.com"
@@ -66,9 +67,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 rel="noopener noreferrer"
               >
                 Valor Investigations
-              </a>
-              .
+              </a>{" "}
+              &mdash; independent investigative research and custom public-data tools.
             </p>
+            <nav className="mt-4 flex flex-wrap gap-x-4 gap-y-1">
+              <Link href="/about" className="hover:text-ink">About</Link>
+              <Link href="/privacy" className="hover:text-ink">Privacy</Link>
+              <Link href="/terms" className="hover:text-ink">Terms</Link>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-ink">Contact</a>
+            </nav>
           </div>
         </footer>
       </body>

@@ -19,7 +19,14 @@ export async function GET(_req: Request, { params }: { params: Promise<{ shard: 
   let urls: string[] = [];
 
   if (shard === "static") {
-    urls = [`${SITE_URL}/`, `${SITE_URL}/about`, `${SITE_URL}/states`, `${SITE_URL}/industries`];
+    urls = [
+      `${SITE_URL}/`,
+      `${SITE_URL}/about`,
+      `${SITE_URL}/privacy`,
+      `${SITE_URL}/terms`,
+      `${SITE_URL}/states`,
+      `${SITE_URL}/industries`,
+    ];
   } else if (shard === "states") {
     const states = await listStates();
     urls = states.map((s) => `${SITE_URL}/state/${encodeURIComponent(s.state)}`);
